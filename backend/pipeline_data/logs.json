@@ -1,0 +1,14 @@
+[
+  {
+    "id": "log-1",
+    "content": "Task X failed at 3 PM due to missing input file."
+  },
+  {
+    "id": "log-2",
+    "content": "Pipeline Y delayed because upstream task Z retried 3 times."
+  },
+  {
+    "id": "log-3",
+    "content": "Spike in sales data from Region X at 3 PM."
+  }
+]
