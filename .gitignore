@@ -1,0 +1,4 @@
+echo "node_modules/
+__pycache__/
+.env
+chroma_data/" >> .gitignore
