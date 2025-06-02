@@ -74,6 +74,14 @@ http://127.0.0.1:8000/docs
 | `/upload`      | POST   | Upload logs in JSON/CSV format                                                                        |
 | `/system-logs` | GET    | etrieve internal system logs stored in SQLite (e.g., system events, queries, API calls).              |
 
+Example
+```json
+[
+  { "id": "log-1", "content": "Task X failed at 3 PM." },
+  { "id": "log-2", "content": "Pipeline Y delayed due to retries." }
+]
+
+```
 ---
 
 ## 🏗️ Project Structure
@@ -118,7 +126,8 @@ data-whisperer/
 
 ---
 ## 🌐 Example Questions
-```
+
+```json
 POST /ask
 {
   "question": "What caused the delay in Task Y yesterday?"
