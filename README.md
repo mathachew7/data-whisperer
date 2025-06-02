@@ -12,15 +12,16 @@ It answers your questions about pipeline events, failures, and anomalies by comb
 - "Why did Task X fail?"
 - "Any delays in the system?"
 
-✅ Upload logs via JSON or CSV  
-✅ ChromaDB for fast vector search  
-✅ SentenceTransformer for embeddings  
-✅ GPT-4 for intelligent context interpretation  
-✅ Modular FastAPI backend  
-✅ System logs with SQLite for debugging and monitoring  
-✅ Pydantic validation for input data  
-✅ API endpoints for logs, questions, and system logs  
-✅ JSON and CSV file support for uploading pipeline data
+- ✅ Upload logs via JSON or CSV  
+- ✅ ChromaDB for fast vector search  
+- ✅ SentenceTransformer for embeddings  
+- ✅ GPT-4 for intelligent context interpretation  
+- ✅ Modular FastAPI backend  
+- ✅ System logs with SQLite for debugging and monitoring  
+- ✅ Pydantic validation for input data  
+- ✅ API endpoints for logs, questions, and system logs  
+-✅ JSON and CSV file support for uploading pipeline data
+
 ---
 
 ## 🧑‍💻 How to Run Locally
