@@ -4,3 +4,4 @@ openai==0.28
 chromadb
 python-dotenv
 sentence-transformers
+python-multipart

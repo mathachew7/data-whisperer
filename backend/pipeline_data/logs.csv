@@ -1,0 +1,11 @@
+id,content
+log-1,Database connection pool exhausted at 4 PM.
+log-2,Data pipeline Z failed due to schema mismatch.
+log-3,API Gateway timeout error during peak load.
+log-4,Disk space on Node 5 reached 95% capacity.
+log-5,Data ingestion job failed: corrupted CSV detected.
+log-6,Task B exceeded memory limits and was killed.
+log-7,ETL job completed successfully at 2 AM.
+log-8,Kafka consumer lag exceeded threshold.
+log-9,API response time degraded due to high concurrency.
+log-10,Data validation errors detected in stream processing pipeline.

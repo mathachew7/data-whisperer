@@ -1,14 +1,12 @@
 [
-  {
-    "id": "log-1",
-    "content": "Task X failed at 3 PM due to missing input file."
-  },
-  {
-    "id": "log-2",
-    "content": "Pipeline Y delayed because upstream task Z retried 3 times."
-  },
-  {
-    "id": "log-3",
-    "content": "Spike in sales data from Region X at 3 PM."
-  }
+  { "id": "log-1", "content": "Database connection pool exhausted at 4 PM." },
+  { "id": "log-2", "content": "Data pipeline Z failed due to schema mismatch." },
+  { "id": "log-3", "content": "API Gateway timeout error during peak load." },
+  { "id": "log-4", "content": "Disk space on Node 5 reached 95% capacity." },
+  { "id": "log-5", "content": "Data ingestion job failed: corrupted CSV detected." },
+  { "id": "log-6", "content": "Task B exceeded memory limits and was killed." },
+  { "id": "log-7", "content": "ETL job completed successfully at 2 AM." },
+  { "id": "log-8", "content": "Kafka consumer lag exceeded threshold." },
+  { "id": "log-9", "content": "API response time degraded due to high concurrency." },
+  { "id": "log-10", "content": "Data validation errors detected in stream processing pipeline." }
 ]
