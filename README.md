@@ -1,6 +1,6 @@
 # Data Whisperer
 
-Data Whisperer is an AI-powered co-pilot for your data pipelines.  
+**Data Whisperer** is an AI-powered co-pilot for your data pipelines.  
 It answers your questions about pipeline events, failures, and anomalies by combining fast vector search (ChromaDB) with GPT-4 for contextual understanding.
 
 ---
@@ -12,16 +12,20 @@ It answers your questions about pipeline events, failures, and anomalies by comb
 - "Why did Task X fail?"
 - "Any delays in the system?"
 
+✅ Upload logs via JSON or CSV  
 ✅ ChromaDB for fast vector search  
 ✅ SentenceTransformer for embeddings  
 ✅ GPT-4 for intelligent context interpretation  
-✅ Modular FastAPI backend
-
+✅ Modular FastAPI backend  
+✅ System logs with SQLite for debugging and monitoring  
+✅ Pydantic validation for input data  
+✅ API endpoints for logs, questions, and system logs  
+✅ JSON and CSV file support for uploading pipeline data
 ---
 
 ## 🧑‍💻 How to Run Locally
 
-## 1️⃣ Clone the repo & set up environment
+### 1️⃣ Clone the repo & set up environment
 
 ```bash
 git clone https://github.com/yourname/data-whisperer.git
@@ -29,9 +33,11 @@ cd data-whisperer/backend
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+
 ```
 
-## 2️⃣ Add your OpenAI API Key
+
+### 2️⃣ Add your OpenAI API Key
 
 Create a `.env` file inside `backend/`:
 
@@ -39,13 +45,13 @@ Create a `.env` file inside `backend/`:
 OPENAI_API_KEY=sk-xxx-your-key-here
 ```
 
-## 3️⃣ Load pipeline data into Chroma
+### 3️⃣ Load pipeline data into Chroma (optional for testing)
 
 ```bash
 python scripts/load_to_chroma.py
 ```
 
-## 4️⃣ Run the FastAPI backend
+### 4️⃣ Run the FastAPI backend
 
 ```bash
 uvicorn app.main:app --reload
@@ -57,6 +63,18 @@ Access the API at:
 http://127.0.0.1:8000/docs
 ```
 
+---
+
+## 📦 API Endpoints
+
+| Endpoint       | Method | Description                                                                                           |
+|----------------|--------|-------------------------------------------------------------------------------------------------------|
+| `/ask`         | POST   | Ask questions about logs and pipelines                                                                |
+| `/upload`      | POST   | Upload logs in JSON/CSV format                                                                        |
+| `/system-logs` | GET    | etrieve internal system logs stored in SQLite (e.g., system events, queries, API calls).              |
+
+---
+
 ## 🏗️ Project Structure
 
 ```bash
@@ -65,11 +83,18 @@ data-whisperer/
 └── backend/
     ├── .env
     ├── app/
-    │   ├── api.py
+    │   ├── api/
+    │   │   ├── routes.py
+    │   │   ├── api_fetcher.py
+    │   ├── core/
+    │   │   ├── logger.py
+    │   │   ├── services.py
+    │   │   ├── vector_db.py
+    │   │   ├── preprocessor.py
     │   ├── main.py
-    │   ├── services.py
-    │   ├── vector_db.py
     ├── chroma_data/
+    ├── logs/
+    │   └── system_logs.db
     ├── pipeline_data/
     │   └── logs.json
     ├── scripts/
@@ -78,16 +103,36 @@ data-whisperer/
     └── README.md
 ```
 
+---
+
 ## 🔒 Notes
 
-- `.env` and `chroma_data/` are git-ignored for security.
+- `.env`, `chroma_data/`, and `logs/system_logs.db` are git-ignored for security.
+
 - Replace `logs.json` with your own pipeline data for real use cases.
+
+- All system activities (e.g., API calls, file uploads, questions) are logged in `logs/system_logs.db`.
+
+- The `/system-logs` endpoint provides easy access to these logs for audit and debugging purposes.
+
+---
+## 🌐 Example Questions
+```
+POST /ask
+{
+  "question": "What caused the delay in Task Y yesterday?"
+}
+
+```
+---
 
 ## 🔥 License
 
 MIT License
 
+---
+
 ## 👑 Author
 
-Built with ❤️ by `Subash Yadav`
+Built with ❤️ by **Subash Yadav**  
 Let’s build the future of data pipelines together! 🚀
