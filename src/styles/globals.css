@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add some light background */
+body {
+  @apply bg-gray-100 text-gray-800 antialiased;
+}
+
+/* Make sure html and body take full height */
+html, body {
+  height: 100%;
+}
